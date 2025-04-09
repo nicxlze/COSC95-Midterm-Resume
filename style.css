@@ -1,0 +1,533 @@
+
+
+/* Reset and base styles */
+html, body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.home, body.about, body.resume, body.experiences, body.projects, body.blog, body.contact {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh; /* Full viewport height */
+  color: white;
+  padding-top: 70px; /* Make room for the fixed navbar */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+h2 {
+  margin-top: 0;
+  padding-top: 20px;
+  margin-bottom: 50px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Background images per page */
+body.home {
+  background-image: url('img/home-background.png');
+}
+
+body.about {
+  background-image: url('img/about-background.png');
+}
+
+body.resume {
+  background-image: url('img/resume-background.png');
+}
+
+body.experiences {
+  background-image: url('img/experiences-background.png');
+}
+
+body.projects {
+  background-image: url('img/projects-background.png');
+}
+
+body.blog {
+  background-image: url('img/blog-background.png');
+}
+
+body.contact {
+  background-image: url('img/contact-background.png');
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+
+/* Navbar Styles */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent !important;
+  color: white;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Group hover effect for all nav links */
+nav:hover li a {
+  transform: scale(1.1);
+  opacity: 0.5;
+  filter: blur(1px);
+}
+
+/* Focused/hovered individual link */
+nav li a:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  filter: blur(0);
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* Background hover effect */
+nav li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  transition: transform 0.5s;
+  transform-origin: right;
+  transform: scaleX(0);
+  z-index: -1;
+}
+
+nav li a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* Ensure links are properly positioned for ::before effect */
+nav li a {
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  z-index: 1;
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem; /* Adjusted font size for better visibility */
+  font-weight: bold; /* Added bold for emphasis */
+}
+
+/* Content container */
+.container {
+  max-width: 800px; /* Reduced from 1200px for narrower desktop view */
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Buttons */
+
+.nav-buttons-left {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-buttons-right {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 16px;
+  background-color: #000;         /* black background */
+  color: #fff;                    /* white text */
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #333;         /* dark gray background on hover */
+  color: #00bfff;                 /* light blue text on hover */
+  transform: translateY(-2px);    /* subtle lift effect */
+}
+
+
+
+/* Index/Home styles */
+
+.home_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 85vh;
+  padding: 0 5%;
+}
+
+
+h1 {
+  font-size: 8rem;
+  margin: 4px 0; /* reduced spacing */
+  background-image: linear-gradient(
+    -225deg,
+    #b3cde0 0%,
+    #cce6ff 29%,
+    #ff99cc 67%,
+    #ffffcc 100%
+  );
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.p1, .p2 {
+  font-size: 1.3rem;
+  padding: 0px 0; /* reduced spacing */
+}
+
+/* Download CV Button */
+
+.btn-container {
+  display: flex;
+  justify-content: left; /* Adjust alignment as needed */
+  padding: 0px;
+  margin-top: 25px;
+}
+
+.btn.btn-color-2 {
+  appearance: button;
+  background-color: #2f76c1;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+}
+
+.btn.btn-color-2:focus {
+  text-decoration: none;
+}
+
+.btn.btn-color-2:hover {
+  transform: translateY(-2px); /* Move the button up slightly */
+  box-shadow: #fff 6px 6px 0 0, #000 6px 6px 0 1px; /* Increase shadow effect */
+}
+
+.btn.btn-color-2:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.btn.btn-color-2:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+
+
+/* CONTACT - Fixed styles with better width control */
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - 20vh);
+  padding: 2rem 1rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-bottom: 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+.section_title {
+  font-size: 2rem; /* Reduced size */
+  color: white;
+  margin-bottom: 1rem; /* Reduced margin */
+  text-shadow:
+  2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Container specifically for contact page */
+
+body.contact {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the body fills the viewport */
+  overflow: hidden; /* Prevents scrolling */
+}
+
+/* Container - takes up remaining space for content */
+.container {
+  flex-grow: 1; /* Makes sure container grows to fill available space */
+  padding: 40px 20px;
+  text-align: center;
+  overflow: hidden; /* Prevents scrolling within container */
+  width: 100%; /* Ensure the container takes the full width */
+}
+
+body.contact .container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+  max-height: calc(100vh - 120px); /* Leave room for nav and footer */
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Use full width of container */
+  max-width: 450px; /* Maximum width for the form */
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.field {
+  width: 100%;
+  margin-bottom: 1.2rem; /* Slightly reduced from 1.5rem */
+  font-family: "Inter", sans-serif;
+}
+
+label, input, textarea {
+  width: 100%;
+  padding: 8px;
+}
+
+label {
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 0.95rem; /* Slightly reduced font size */
+}
+
+.icon {
+  width: 1.3rem; /* Slightly reduced from 1.5rem */
+  height: 1.3rem;
+  margin-right: 8px; /* Slightly reduced from 10px */
+}
+
+.field:focus-within label {
+  color: #fff;
+  letter-spacing: 1px; /* Reduced from 2px */
+}
+
+input, textarea {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.7rem; /* Reduced from 0.8rem */
+  color: #000;
+}
+
+input:focus, textarea:focus {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 8px rgba(77, 199, 217, 0.6);
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+button {
+  font-family: inherit;
+  font-size: 16px;
+  background: linear-gradient(to bottom, #4dc7d9 0%, #66a6ff 100%);
+  color: white;
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  cursor: pointer;
+  width: auto; /* Changed from default to auto */
+  align-self: center; /* Center the button in the form */
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button span {
+  display: block;
+  margin-left: 0.4em;
+  transition: all 0.3s;
+}
+
+button svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+  transition: all 0.3s;
+}
+
+button .svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-right: 0.5em;
+  transition: all 0.3s;
+}
+
+button:hover .svg-wrapper {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+button:hover svg {
+  transform: rotate(45deg);
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.social-media span {
+  margin-right: 10px;
+  font-size: 1.1rem; /* Reduced from 1.2rem */
+  white-space: nowrap;
+}
+
+.social-icon {
+  width: 28px; /* Reduced from 32px */
+  height: 28px;
+  margin: 0 8px; /* Reduced from 10px */
+  transition: transform 0.3s;
+}
+
+.social-media a {
+  color: #fff;
+  transition: transform 0.3s;
+}
+
+.social-media a:hover {
+  transform: scale(1.2);
+}
+
+/* Updated footer styles - non-fixed position */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 15px 0;
+  margin-top: 30px; /* Space between content and footer */
+  background-color: rgba(0, 0, 0, 0.3); /* Subtle background */
+  color: white;
+}
+
+footer p {
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+

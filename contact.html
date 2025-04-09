@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Nicole's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="contact">
+
+  <nav>
+    <div class="logo">Nicole</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2 class="section_title">Contact Me</h2>
+
+    <form action="mailto:ma.nicolealmonicar@gmail.com" method="POST" enctype="text/plain">
+      <div class="field" tabindex="1">
+        <label for="username">
+          <img src="img/user-icon.png" alt="Name icon" class="icon" />Your Name
+        </label>
+        <input id="username" name="username" type="text" placeholder="e.g. John Doe" required />
+      </div>
+
+      <div class="field" tabindex="2">
+        <label for="email">
+          <img src="img/mail-icon.png" alt="Email icon" class="icon" />Your Email
+        </label>
+        <input id="email" name="email" type="email" placeholder="email@domain.com" required />
+      </div>
+
+      <div class="field" tabindex="3">
+        <label for="message">
+          <img src="img/mail-message-icon.png" alt="Message icon" class="icon" />Your Message
+        </label>
+        <textarea id="message" name="message" placeholder="Type your message here" required></textarea>
+      </div>
+
+      <button type="submit">
+        <div class="svg-wrapper-1">
+          <div class="svg-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+            </svg>
+          </div>
+        </div>
+        <span>Send</span>
+      </button>
+
+      <div class="social-media">
+        <span>Get In Touch <i class="fas fa-long-arrow-alt-right"></i></span>
+        <a href="https://facebook.com/nicoleealmonicar" target="_blank">
+          <img src="img/facebook-icon.png" alt="Facebook" class="social-icon" />
+        </a>
+        <a href="https://instagram.com/nicxlze" target="_blank">
+          <img src="img/instagram-icon.png" alt="Instagram" class="social-icon" />
+        </a>
+        <a href="https://t.me/nicsilogggg" target="_blank">
+          <img src="img/telegram-icon.png" alt="Telegram" class="social-icon" />
+        </a>
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    <p>&#169; Nicole Almonicar 2025. All rights reserved.</p>
+  </footer>
+  
+  <div class="nav-buttons-left">
+    <a href="blog.html" class="btn">← Back to Blog</a>
+  </div>
+  <div class="nav-buttons-right">
+    <a href="index.html" class="btn">Go to Home →</a>
+  </div>
+
+</body>
+</html>
