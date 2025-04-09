@@ -25,13 +25,13 @@ body.home, body.about, body.resume, body.skills, body.experiences, body.projects
   overflow: hidden; /* Prevent scrolling */
 }
 
-h2 {
-  margin-top: 0;
-  padding-top: 20px;
-  margin-bottom: 50px;
+.section-title {
   font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
+
 
 /* Background images per page */
 body.home {
@@ -360,8 +360,6 @@ h1 {
 
 /* Skills Style */
 
-/* Skills Style - Two Column Layout */
-
 .skills-container {
   padding: 3rem 2rem; /* Adjusted padding, slightly less than before */
   text-align: center;
@@ -433,6 +431,182 @@ h1 {
   font-size: 1.1rem; /* Adjusted font size */
 }
 
+/* Experiences Page Specific Styles */
+.experiences-container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0rem;
+  color: #e0e0e0;
+}
+
+.experiences-container h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem; /* Increased from 0.5rem */
+  color: #ffffff;
+}
+
+.experiences-container > p {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #c0c0c0;
+}
+
+.experiences-container ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experiences-container li {
+  padding: 1.5rem;
+  background: rgba(220, 215, 215, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease;
+  border-left: 4px solid white;
+}
+
+.experiences-container li:hover {
+  transform: translateY(-5px);
+}
+
+.experiences-container strong {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.experiences-container .role {
+  display: block;
+  font-weight: 500;
+  margin: 0.3rem 0 0.7rem;
+  color: #90e0ef;
+}
+
+.experiences-container li p {
+  font-size: 0.95rem;
+  color: #d1d1d1;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Projects Page Specific Styles */
+/* Adjust h2 spacing */
+.projects-container h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 1.5rem; /* tighter spacing */
+  margin-top: 3rem;
+}
+
+/* Projects layout */
+.projects-details-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 0 2rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #e0e0e0;
+}
+
+.color-container {
+  background: rgba(220, 215, 215, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(6px);
+  border-left: 4px solid white;
+}
+
+.color-container:hover {
+  transform: translateY(-5px);
+}
+
+.article-container {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.project-img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.project-title {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin: 1rem 0 0.5rem;
+  text-align: center;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: #d1d1d1;
+  line-height: 1.6;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.project-btn {
+  background-color: transparent;
+  border: 2px solid #90e0ef;
+  color: #90e0ef;
+  padding: 0.5rem 1.2rem;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-btn:hover {
+  background-color: #90e0ef;
+  color: #000000;
+}
+
+.see-more-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.see-more-container .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.see-more-container .btn:hover {
+  background-color: #0056b3;
+}
 /* CONTACT - Fixed styles with better width control */
 #contact {
   display: flex;
