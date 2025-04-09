@@ -12,7 +12,7 @@ html, body {
   box-sizing: border-box;
 }
 
-body.home, body.about, body.resume, body.experiences, body.projects, body.blog, body.contact {
+body.home, body.about, body.resume, body.skills, body.experiences, body.projects, body.contact {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -46,16 +46,16 @@ body.resume {
   background-image: url('img/resume-background.png');
 }
 
+body.skills {
+  background-image: url('img/skills-background.png');
+}
+
 body.experiences {
   background-image: url('img/experiences-background.png');
 }
 
 body.projects {
   background-image: url('img/projects-background.png');
-}
-
-body.blog {
-  background-image: url('img/blog-background.png');
 }
 
 body.contact {
@@ -153,6 +153,22 @@ nav li a {
   color: white;
   font-size: 1.3rem; /* Adjusted font size for better visibility */
   font-weight: bold; /* Added bold for emphasis */
+}
+
+/* Active page indicator */
+nav li a.active {
+  color: #00bfff; 
+  opacity: 1;
+  filter: blur(0);
+  text-decoration: underline;
+  transform: scale(1.2);
+}
+
+/* Make sure active state persists even when navbar is hovered */
+nav:hover li a.active {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1.2);
 }
 
 /* Content container */
@@ -298,7 +314,124 @@ h1 {
   transform: translate(2px, 2px);
 }
 
+/* About Me Styles */
 
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.about-container h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 100px; /* space between image and text */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 410px;
+  height: 410px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.about-container-text {
+  flex: 1;
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: justify;
+  max-width: 700px;
+}
+
+.about-container-text p {
+  margin-bottom: 20px;
+}
+
+
+/* Skills Style */
+
+/* Skills Style - Two Column Layout */
+
+.skills-container {
+  padding: 3rem 2rem; /* Adjusted padding, slightly less than before */
+  text-align: center;
+  min-height: 100vh; /* Keep min-height to ensure full viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.skills-container h2 {
+  font-size: 2.5rem; /* Slightly reduced font size */
+  margin-bottom: 2.5rem; /* Slightly reduced margin */
+}
+
+.skills-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 3rem; /* Reduced gap values */
+  width: 85%; /* Slightly reduced width */
+  max-width: 1100px; /* Slightly reduced max width */
+}
+
+.skills-category {
+  text-align: left;
+}
+
+.skills-category h3 {
+  font-size: 1.6rem; /* Slightly reduced font size */
+  color: #004aad;
+  margin-bottom: 1.2rem; /* Slightly reduced margin */
+}
+
+.skill {
+  margin-bottom: 1.8rem; /* Slightly reduced margin */
+}
+
+.skill-name {
+  font-size: 1.1rem; /* Slightly reduced font size */
+  font-weight: 600;
+  margin-bottom: 0.7rem; /* Slightly reduced margin */
+}
+
+.progress-bar {
+  width: 100%;
+  background: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 18px; /* Slightly reduced height */
+}
+
+.progress {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  width: 0;
+  animation: fillBar 2s forwards;
+}
+
+@keyframes fillBar {
+  to { width: var(--progress); }
+}
+
+.skills-container h2 {
+  font-size: 1.8rem; /* Adjusted font size */
+}
+
+.skills-container p {
+  font-size: 1.1rem; /* Adjusted font size */
+}
 
 /* CONTACT - Fixed styles with better width control */
 #contact {
