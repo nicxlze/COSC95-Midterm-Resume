@@ -12,7 +12,7 @@ html, body {
   box-sizing: border-box;
 }
 
-body.home, body.about, body.resume, body.skills, body.experiences, body.projects, body.contact {
+body.home, body.about, body.resume, body.skills, body.challenges, body.future, body.experiences, body.projects, body.contact {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -25,11 +25,23 @@ body.home, body.about, body.resume, body.skills, body.experiences, body.projects
   overflow: hidden; /* Prevent scrolling */
 }
 
-.section-title {
-  font-size: 2rem;
-  letter-spacing: 1px;
-  margin-bottom: 1.5rem;
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
   text-align: center;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.about-container,
+.resume-container,
+.skills-container,
+.challenges-container,
+.future-container,
+.experiences-container,
+.projects-container {
+  padding-top: 60px; /* adjust based on design */
 }
 
 
@@ -51,11 +63,19 @@ body.skills {
 }
 
 body.experiences {
-  background-image: url('img/experiences-background.png');
+  background-image: url('img/skills-background.png');
 }
 
 body.projects {
   background-image: url('img/projects-background.png');
+}
+
+body.challenges {
+  background-image: url('img/experiences-background.png');
+}
+
+body.future {
+  background-image: url('img/future-background.png');
 }
 
 body.contact {
@@ -357,30 +377,94 @@ h1 {
   margin-bottom: 20px;
 }
 
+/* Resume Container Styling */
+.resume-container {
+  background: rgba(220, 215, 215, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  width: 80vw;
+  height: 85vh;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 1rem;
+  font-size: 0.9rem;
+  margin: 0 auto; /* center horizontally */
+
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: #444;
+  text-align: left;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+ul ul {
+  list-style-type: circle;
+  margin-left: 1.2rem;
+}
+
+a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.download-cv-btn {
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  width: fit-content;
+  align-self: center;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.download-cv-btn:hover {
+  background-color: #155ac6;
+}
 
 /* Skills Style */
 
 .skills-container {
-  padding: 3rem 2rem; /* Adjusted padding, slightly less than before */
-  text-align: center;
-  min-height: 100vh; /* Keep min-height to ensure full viewport */
+  height: 100vh;
+  padding: 2rem 2rem 2rem; /* Top padding adjusted for fixed navbar */
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-start; /* Align from top after padding */
   align-items: center;
+  overflow: hidden;
 }
 
+
 .skills-container h2 {
-  font-size: 2.5rem; /* Slightly reduced font size */
-  margin-bottom: 2.5rem; /* Slightly reduced margin */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .skills-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.5rem 3rem; /* Reduced gap values */
-  width: 85%; /* Slightly reduced width */
-  max-width: 1100px; /* Slightly reduced max width */
+  gap: 2rem 4rem; /* nice spacing */
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
 }
 
 .skills-category {
@@ -388,64 +472,61 @@ h1 {
 }
 
 .skills-category h3 {
-  font-size: 1.6rem; /* Slightly reduced font size */
+  font-size: 1.3rem;
   color: #004aad;
-  margin-bottom: 1.2rem; /* Slightly reduced margin */
+  margin-bottom: 1rem;
 }
 
 .skill {
-  margin-bottom: 1.8rem; /* Slightly reduced margin */
+  margin-bottom: 1.5rem;
 }
 
 .skill-name {
-  font-size: 1.1rem; /* Slightly reduced font size */
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0.7rem; /* Slightly reduced margin */
+  margin-bottom: 0.5rem;
 }
 
 .progress-bar {
   width: 100%;
+  height: 16px;
   background: #e0e0e0;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
-  height: 18px; /* Slightly reduced height */
 }
 
 .progress {
   height: 100%;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #4facfe, #00f2fe);
   width: 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
   animation: fillBar 2s forwards;
 }
 
 @keyframes fillBar {
-  to { width: var(--progress); }
+  to {
+    width: var(--progress);
+  }
 }
 
-.skills-container h2 {
-  font-size: 1.8rem; /* Adjusted font size */
-}
-
-.skills-container p {
-  font-size: 1.1rem; /* Adjusted font size */
-}
 
 /* Experiences Page Specific Styles */
 .experiences-container {
   width: 95%;
   max-width: 1200px;
-  margin: 50px auto;
-  padding: 0rem;
+  margin: 0 auto; /* Removed top margin */
+  padding: 2rem 0 2rem; /* Added top padding for fixed navbar */
   color: #e0e0e0;
+  min-height: 100vh; /* Ensure it fits full screen */
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
+
 .experiences-container h2 {
-  font-size: 2.5rem;
-  font-weight: 600;
   text-align: center;
-  margin-bottom: 2rem; /* Increased from 0.5rem */
-  color: #ffffff;
+  font-size: 36px;
+  margin-bottom: 40px;
 }
 
 .experiences-container > p {
@@ -498,27 +579,35 @@ h1 {
 }
 
 /* Projects Page Specific Styles */
-/* Adjust h2 spacing */
+.projects-container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 2rem;
+  color: #e0e0e0;
+  margin-top: 0; /* Set top margin to 0 to remove any space above the title */
+}
+
+/* Adjust h2 spacing to bring it to the top */
 .projects-container h2 {
   text-align: center;
-  font-size: 1.5rem;
-  color: #ffffff;
-  font-weight: 600;
-  margin-bottom: 1.5rem; /* tighter spacing */
-  margin-top: 3rem;
+  font-size: 36px;
+  margin-top: 0; /* Remove any default margin from the top */
+  margin-bottom: 40px; /* Keep existing bottom margin */
 }
 
 /* Projects layout */
 .projects-details-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
+  gap: 2rem;
   padding: 0 2rem 4rem;
   max-width: 1200px;
   margin: 0 auto;
   color: #e0e0e0;
 }
 
+/* Color container fix */
 .color-container {
   background: rgba(220, 215, 215, 0.08);
   border-radius: 16px;
@@ -527,7 +616,12 @@ h1 {
   transition: transform 0.3s ease;
   backdrop-filter: blur(6px);
   border-left: 4px solid white;
+  flex-grow: 0;  /* Prevent growth */
+  flex-shrink: 0; /* Prevent shrinking */
+  height: auto; /* Prevent stretching vertically */
+  box-sizing: border-box; /* Ensure padding and borders don't affect height */
 }
+
 
 .color-container:hover {
   transform: translateY(-5px);
